@@ -8,10 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TranslationCategory {
+@Data
+public class ExpanseCategory {
     @Id
     private Long id;
     private String name;

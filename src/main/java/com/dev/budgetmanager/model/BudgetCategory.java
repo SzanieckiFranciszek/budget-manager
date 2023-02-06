@@ -8,9 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class BudgetCategory {
     @Id
     private Long id;

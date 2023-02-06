@@ -4,17 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String firstName;
@@ -22,7 +20,12 @@ public class User {
     private String email;
     private String password;
     @ManyToOne
+    @JoinColumn(name = "user_role_id_id")
     private UserRole userRoleId;
     private int activeStatus;
     private String insertDate;
+
+    public UserRole getUserRoleId() {
+        return userRoleId;
+    }
 }
