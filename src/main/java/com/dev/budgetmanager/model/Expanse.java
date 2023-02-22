@@ -23,10 +23,10 @@ public class Expanse {
     private String expanseType;
     private Timestamp date;
     @ManyToOne
-    @JoinColumn(name = "expanse_category_id_id")
+    @JoinColumn(name = "expanse_category_id")
     private ExpanseCategory expanseCategoryId;
     @ManyToOne
-    @JoinColumn(name = "user_id_id")
+    @JoinColumn(name = "user_id")
     private User userId;
     private String notes;
     private Timestamp insertDate;
