@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ExpanseCategory {
+public class ExpenseCategory {
     @Id
     private Long id;
     private String name;
