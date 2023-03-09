@@ -19,13 +19,9 @@ public class User {
     private String lastName;
     private String email;
     private String password;
-    @ManyToOne
-    @JoinColumn(name = "user_role_id_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_role_id")
     private UserRole userRoleId;
     private int activeStatus;
     private String insertDate;
-
-    public UserRole getUserRoleId() {
-        return userRoleId;
-    }
 }

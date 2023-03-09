@@ -2,6 +2,7 @@ package com.dev.budgetmanager.conroller;
 
 import com.dev.budgetmanager.model.User;
 import com.dev.budgetmanager.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ public class UserController {
 
     private final UserService userService;
 
+    @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -30,6 +32,7 @@ public class UserController {
 
     @PostMapping("/add")
     public ResponseEntity<User> addUser(@RequestBody User user) {
+        //return only User Id, no object User
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
 
